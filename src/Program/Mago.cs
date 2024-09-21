@@ -52,7 +52,7 @@ public class Mago : InterfacePersonaje
     }
 
     private bool vivo;
-    public bool Vivo
+    public bool EstoyVivo
     {
         get { return vivo; }
         set { vivo = value; }
@@ -66,7 +66,7 @@ public class Mago : InterfacePersonaje
         this.Dmg = 10;
         this.Hp = 100;
         this.Item = new ArrayList();
-        this.Vivo = true;
+        this.EstoyVivo = true;
         this.Libro = grimorio;
     }
 
@@ -85,7 +85,7 @@ public class Mago : InterfacePersonaje
     public void Atacar(InterfacePersonaje personaje)
     {   
         //Solo funciona si el elfo esta vivo
-        if (this.Vivo == true){
+        if (this.EstoyVivo == true){
             // Al recibir daño, se reduce la vida
             personaje.RestarVida(this.Dmg);
         }
@@ -99,7 +99,7 @@ public class Mago : InterfacePersonaje
     public void AtacarWithHechizo(InterfacePersonaje personaje, Hechizos hechiz)
     {
         //Se verifica que el mago este vivo
-        if (this.Vivo)
+        if (this.EstoyVivo)
         {
                     //Recorremos la lista de hechizos en el libro
                     foreach (var h in (this.Libro.SetHechizos))
@@ -128,7 +128,7 @@ public class Mago : InterfacePersonaje
     //Metodo para poder curarze
     public void Heal()
     {
-        if (this.Vivo == true){
+        if (this.EstoyVivo == true){
             //Se aumenta la vida
             this.Hp += 25;
             //Se implementa el no poder aumentar la vida al llegar a 100 puntos
@@ -146,14 +146,14 @@ public class Mago : InterfacePersonaje
     public void RestarVida(int Daño)
     {   
         //Solo recibira daño si mago esta vivo
-        if (this.Vivo == true)
+        if (this.EstoyVivo == true)
         {   
             //Se reduce la vida en base al daño recibido
             this.Hp -= Daño;
             //Si la vida del mago llega a 0 o menos, este muere
             if (this.Hp <= 0)
             {
-                this.Vivo = false;
+                this.EstoyVivo = false;
             }
             else
             {
@@ -164,7 +164,7 @@ public class Mago : InterfacePersonaje
 
     public void AddItem(Item nombre)
     {
-        if (this.Vivo == true)
+        if (this.EstoyVivo == true)
         {
             if(this.Item.Count < 2){
                 this.Item.Add(nombre);
@@ -180,7 +180,7 @@ public class Mago : InterfacePersonaje
 
     public void DeleteItem(Item nombre)
     {
-        if (this.Vivo == true){
+        if (this.EstoyVivo == true){
             
             if (this.Item.Contains(nombre))
             {

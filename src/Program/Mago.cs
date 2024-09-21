@@ -6,8 +6,13 @@ namespace Ucu.Poo.Roleplay;
 
 public class Mago : InterfacePersonaje
 {
+    private Libros libro;
+    public Libros Libro
+    {
+        get { return libro; }
+        set { libro = value;  }
+    }
     private string name;
-
     public string Name
     {
         get { return name; }
@@ -62,8 +67,7 @@ public class Mago : InterfacePersonaje
         this.Hp = 100;
         this.Item = new ArrayList();
         this.Vivo = true;
-
-        this.Item.Add(grimorio);
+        this.Libro = grimorio;
     }
 
     public int ValorAtaque()
@@ -97,14 +101,8 @@ public class Mago : InterfacePersonaje
         //Se verifica que el mago este vivo
         if (this.Vivo)
         {
-            //Recoremos los objetos del inventario del mago
-            foreach (var grimorio in this.Item)
-            {
-                //Se verifica si el objeto es de tipo "Libros"
-                if (grimorio is Libros libros)
-                {
                     //Recorremos la lista de hechizos en el libro
-                    foreach (var h in libros.SetHechizos)
+                    foreach (var h in (this.Libro.SetHechizos))
                     {
                         //Verifica si el nombre del hechizo es el mismo del libro
                         if (hechiz.NombreHechizo == ((Hechizos)h).NombreHechizo)
@@ -117,8 +115,6 @@ public class Mago : InterfacePersonaje
                             return;
                         }
                     }
-                }
-            }
             //Si no se encuentra el hechizo, no puede atacar
             Console.WriteLine("El hechizo no está en el grimorio.");
         }

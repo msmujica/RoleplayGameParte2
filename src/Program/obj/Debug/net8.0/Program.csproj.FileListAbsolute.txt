@@ -17,3 +17,22 @@ C:\Users\Estudiante UCU\Desktop\RoleplayGameParte2\src\Program\obj\Debug\net8.0\
 C:\Users\Estudiante UCU\Desktop\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.pdb
 C:\Users\Estudiante UCU\Desktop\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.genruntimeconfig.cache
 C:\Users\Estudiante UCU\Desktop\RoleplayGameParte2\src\Program\obj\Debug\net8.0\ref\Program.dll
+C:\RoleplayGameParte2\src\Program\bin\Debug\net8.0\Program.exe
+C:\RoleplayGameParte2\src\Program\bin\Debug\net8.0\Program.deps.json
+C:\RoleplayGameParte2\src\Program\bin\Debug\net8.0\Program.runtimeconfig.json
+C:\RoleplayGameParte2\src\Program\bin\Debug\net8.0\Program.dll
+C:\RoleplayGameParte2\src\Program\bin\Debug\net8.0\Program.pdb
+C:\RoleplayGameParte2\src\Program\bin\Debug\net8.0\Library.dll
+C:\RoleplayGameParte2\src\Program\bin\Debug\net8.0\Library.pdb
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.csproj.AssemblyReference.cache
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.GeneratedMSBuildEditorConfig.editorconfig
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.AssemblyInfoInputs.cache
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.AssemblyInfo.cs
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.csproj.CoreCompileInputs.cache
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.sourcelink.json
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.csproj.Up2Date
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.dll
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\refint\Program.dll
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.pdb
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\Program.genruntimeconfig.cache
+C:\RoleplayGameParte2\src\Program\obj\Debug\net8.0\ref\Program.dll

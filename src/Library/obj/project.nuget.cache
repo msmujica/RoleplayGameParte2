@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GAg5cpkuO93CtFQfhYl5LQslfutvSKdSiwKpIFSvrGGEjFN+WiuJGdveOilYccG++eOisACslk+RRyEQlu1+eA==",
+  "dgSpecHash": "PAhZe0hIN+R9W529jlHn4OuxzZ+6gNVMWT0oJd8Mlrh0lGY0FOWPdMtFQzqT6hvK5g0t1Omq2VvWmd+Zdx+geQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Library\\Library.csproj",
+  "projectFilePath": "C:\\RoleplayGameParte2\\src\\Library\\Library.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

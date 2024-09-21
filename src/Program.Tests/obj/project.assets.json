@@ -1854,20 +1854,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\": {}
+    "C:\\Users\\cuent\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program.Tests\\Program.Tests.csproj",
+      "projectUniqueName": "C:\\RoleplayGameParte2\\src\\Program.Tests\\Program.Tests.csproj",
       "projectName": "Program.Tests",
-      "projectPath": "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program.Tests\\Program.Tests.csproj",
-      "packagesPath": "C:\\Users\\Estudiante UCU\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program.Tests\\obj\\",
+      "projectPath": "C:\\RoleplayGameParte2\\src\\Program.Tests\\Program.Tests.csproj",
+      "packagesPath": "C:\\Users\\cuent\\.nuget\\packages\\",
+      "outputPath": "C:\\RoleplayGameParte2\\src\\Program.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
-        "C:\\Users\\Estudiante UCU\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\cuent\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1879,8 +1879,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program\\Program.csproj": {
-              "projectPath": "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program\\Program.csproj"
+            "C:\\RoleplayGameParte2\\src\\Program\\Program.csproj": {
+              "projectPath": "C:\\RoleplayGameParte2\\src\\Program\\Program.csproj"
             }
           }
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.ComponentModel.Design;
 namespace Ucu.Poo.Roleplay;
 
-public class  Enano
+public class  Enano : InterfacePersonaje
 {
     private string name;
 
@@ -72,25 +72,9 @@ public class  Enano
         return this.Hp;
     }
     
-    //Metodo para atacar al Mago
-    public void AtacarMago(Mago personaje)
+    public void Atacar(InterfacePersonaje personaje)
     {   
-        //Solo funciona si el enano esta vivo
-        if (this.EstoyVivo == true){
-            // Al recibir daño, se reduce la vida
-            personaje.RestarVida(this.Dmg);
-        }
-        else
-        {   
-            //No atacara si estas muerto
-            Console.WriteLine("No puedes hacer ninguna accion tu personaje esta muerto");
-        }
-    }
-    
-    //Metodo para atacar al Elfo
-    public void AtacarElfo(Elfo personaje)
-    {   
-        //Solo funciona si el enano esta vivo
+        //Solo funciona si el elfo esta vivo
         if (this.EstoyVivo == true){
             // Al recibir daño, se reduce la vida
             personaje.RestarVida(this.Dmg);
@@ -98,8 +82,8 @@ public class  Enano
         else
         {
             //No atacara si estas muerto
-            Console.WriteLine("No puedes hacer ninguna accion tu personaje esta muerto");
-        }    
+            Console.WriteLine("Estas Muerto.");
+        }
     }
     
     //Metodo para reducir la vida en funcion del daño recibido

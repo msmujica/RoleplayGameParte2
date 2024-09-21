@@ -1,12 +1,6 @@
 ﻿using Ucu.Poo.Roleplay;
 
+Elfo elfo = new Elfo("Thorin", "Masculino", 195);
 Enano enano = new Enano("Thorin", "Masculino", 195);
-
-Hechizos FireBall = new Hechizos("FireBall", 20);
-Libros grimorio = new Libros("5 trvols");
-grimorio.AddHechizo(FireBall);
-        
-        
-Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);
-        
-mago.AtacarEnano(enano, FireBall);
+// El elfo ataca al enano
+elfo.Atacar(enano);

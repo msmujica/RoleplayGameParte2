@@ -1,7 +1,7 @@
 using System.Collections;
 using System.ComponentModel.Design;
 namespace Ucu.Poo.Roleplay;
-public class Elfo
+public class Elfo : InterfacePersonaje
 {
     private string name;
 
@@ -72,13 +72,14 @@ public class Elfo
         //Devuelve la vida restante del elfo
         return this.Hp;
     }
-    //Metodo para atacar al Enano
-    public void AtacarEnano(Enano personaje)
+    
+    public void Atacar(InterfacePersonaje personaje)
     {   
         //Solo funciona si el elfo esta vivo
         if (this.EstoyVivo == true){
             // Al recibir daño, se reduce la vida
             personaje.RestarVida(this.Dmg);
+            Console.WriteLine("Dañaso");
         }
         else
         {
@@ -86,20 +87,7 @@ public class Elfo
             Console.WriteLine("Estas Muerto.");
         }
     }
-    //Metodo para atacar al Mago
-    public void AtacarMago(Mago personaje)
-    {   
-        //Solo funciona si el elfo esta vivo
-        if (this.EstoyVivo == true){
-            // Al recibir daño, se reduce la vida
-            personaje.RestarVida(this.Dmg);
-        }
-        else
-        {
-            //No atacara si estas muerto
-            Console.WriteLine("Estas Muerto.");
-        }
-    }
+    
     //Metodo para poder curarze
     public void Heal()
     {
@@ -140,7 +128,7 @@ public class Elfo
         }
     }
 
-    public void Additem(Item nombre)
+    public void AddItem(Item nombre)
     {
         if (this.EstoyVivo == true)
         {

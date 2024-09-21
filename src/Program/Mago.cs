@@ -4,7 +4,7 @@ using System.Collections;
 namespace Ucu.Poo.Roleplay;
 
 
-public class Mago
+public class Mago : InterfacePersonaje
 {
     private string name;
 
@@ -77,8 +77,22 @@ public class Mago
         //Devuelve la vida restante del Mago
         return this.Hp;
     }
-    //Metodo para atacar al Enano, con hechizos
-    public void AtacarEnano(Enano personaje, Hechizos hechiz)
+    
+    public void Atacar(InterfacePersonaje personaje)
+    {   
+        //Solo funciona si el elfo esta vivo
+        if (this.Vivo == true){
+            // Al recibir daño, se reduce la vida
+            personaje.RestarVida(this.Dmg);
+        }
+        else
+        {
+            //No atacara si estas muerto
+            Console.WriteLine("Estas Muerto.");
+        }
+    }
+    
+    public void AtacarWithHechizo(InterfacePersonaje personaje, Hechizos hechiz)
     {
         //Se verifica que el mago este vivo
         if (this.Vivo)
@@ -114,43 +128,7 @@ public class Mago
             Console.WriteLine("El mago está muerto y no puede atacar.");
         }
     }
-    //Metodo para atacar al Elfo, con hechizos
-    public void AtacarElfo(Elfo personaje, Hechizos hechiz)
-   {
-       //Se verifica que el mago este vivo
-       if (this.Vivo)
-       {
-           //Recoremos los objetos del inventario del mago
-           foreach (var grimorio in this.Item)
-           {
-               //Se verifica si el objeto es de tipo "Libros"
-               if (grimorio is Libros libros)
-               {
-                   //Recorremos la lista de hechizos en el libro
-                   foreach (var h in libros.SetHechizos)
-                   {
-                       //Verifica si el nombre del hechizo es el mismo del libro
-                       if (hechiz.NombreHechizo == ((Hechizos)h).NombreHechizo)
-                       {
-                           //Se calcula el daño total del mago(daño del mago + daño del hechizo)
-                           int dañoTotal = ((Hechizos)h).DañoHechizo + this.Dmg;
-                           //El objetivo recibe el daño
-                           personaje.RestarVida(dañoTotal);
-                           //Salimos del metodo
-                           return;
-                       }
-                   }
-               }
-           }
-           //Si no se encuentra el hechizo, no puede atacar
-           Console.WriteLine("El hechizo no está en el grimorio.");
-       }
-       else
-       {
-           //Si el mago esta muerto, no puede atacar
-           Console.WriteLine("El mago está muerto y no puede atacar.");
-       }
-   }
+    
     //Metodo para poder curarze
     public void Heal()
     {
@@ -188,7 +166,7 @@ public class Mago
         }
     }
 
-    public void Additem(Item nombre)
+    public void AddItem(Item nombre)
     {
         if (this.Vivo == true)
         {

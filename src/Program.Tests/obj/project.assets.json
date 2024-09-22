@@ -1854,20 +1854,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program.Tests\\Program.Tests.csproj",
+      "projectUniqueName": "C:\\Prog 2\\RoleplayGameParte2\\src\\Program.Tests\\Program.Tests.csproj",
       "projectName": "Program.Tests",
-      "projectPath": "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program.Tests\\Program.Tests.csproj",
-      "packagesPath": "C:\\Users\\Estudiante UCU\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program.Tests\\obj\\",
+      "projectPath": "C:\\Prog 2\\RoleplayGameParte2\\src\\Program.Tests\\Program.Tests.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Prog 2\\RoleplayGameParte2\\src\\Program.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
-        "C:\\Users\\Estudiante UCU\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1879,8 +1879,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program\\Program.csproj": {
-              "projectPath": "C:\\Users\\Estudiante UCU\\Desktop\\RoleplayGameParte2\\src\\Program\\Program.csproj"
+            "C:\\Prog 2\\RoleplayGameParte2\\src\\Program\\Program.csproj": {
+              "projectPath": "C:\\Prog 2\\RoleplayGameParte2\\src\\Program\\Program.csproj"
             }
           }
         }
@@ -1936,7 +1936,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

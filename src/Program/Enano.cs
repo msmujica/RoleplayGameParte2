@@ -125,23 +125,34 @@ public class  Enano : InterfacePersonaje
     }
     public void AddItem(Item nombre)
     {
-        if (this.EstoyVivo == true){
-            if (item.Count < 2)
+        if (this.EstoyVivo == true)
+        {
+            if (!item.EsMagico)
             {
-                this.Item.Add(nombre);
-                this.Dmg += nombre.ValorAtaque;
-                this.Hp += nombre.ValorDefensa;
+                if (item.Count < 2)
+                {
+                    this.Item.Add(nombre);
+                    this.Dmg += nombre.ValorAtaque;
+                    this.Hp += nombre.ValorDefensa;
+                }
+                else
+                {
+                    Console.WriteLine("No puedes agregar mas items, elimina alguno para agregar otro.");
+                }
             }
             else
             {
-                Console.WriteLine("No puedes agregar mas items, elimina alguno para agregar otro."); 
-            }
+                Console.WriteLine("No se puede agregar un objeto magico a este personaje");
+            } 
         }
+            
+            
         else
         {
             Console.WriteLine("No puedes hacer ninguna accion tu personaje esta muerto");
         }
     }
+ 
 
     public void DeleteItem(Item nombre)
     {

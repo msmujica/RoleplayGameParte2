@@ -174,6 +174,10 @@ public class Mago : InterfacePersonaje
                 this.Item.Add(nombre);
                 this.Dmg += nombre.ValorAtaque;
                 this.Hp += nombre.ValorDefensa;
+                if (item.EsMagico)
+                {
+                    Console.WriteLine("El item agregado es magico");
+                }
             }
         }
         else

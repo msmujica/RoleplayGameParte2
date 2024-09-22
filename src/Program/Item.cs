@@ -27,6 +27,14 @@ public class Item
         set { valordefensa = value; }
     }
 
+    private bool esMagico;
+
+    public bool EsMagico
+    {
+        get { return esMagico; }
+        set { esMagico = value; }
+    }
+
     public bool validacion(string nombre, int valorAtaque, int valorDefensa)
     {
         bool valido = false;
@@ -39,7 +47,7 @@ public class Item
         return valido;
     }
 	
-    public Item(string nombre, int valorataque, int valordefensa)
+    public Item(string nombre, int valorataque, int valordefensa, bool esMagico)
     {
         bool valor = validacion(nombre, valorataque, valordefensa);
         if (valor)
@@ -47,6 +55,7 @@ public class Item
             this.Nombre = nombre;
             this.ValorAtaque = valorataque;
             this.ValorDefensa = valordefensa;
+            this.EsMagico = esMagico;
         }
     }
 }

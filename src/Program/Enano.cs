@@ -125,9 +125,9 @@ public class  Enano : InterfacePersonaje
     }
     public void AddItem(Item nombre)
     {
-        if (this.EstoyVivo == true)
+        if (this.EstoyVivo)
         {
-            if (!item.EsMagico)
+            if (!nombre.EsMagico)
             {
                 if (item.Count < 2)
                 {

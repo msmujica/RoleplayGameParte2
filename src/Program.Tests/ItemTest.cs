@@ -19,7 +19,7 @@ public class ItemTest
         int valordefensa = 10;
         
         //Se crea una nueva instancia
-        Item Elpoder = new Item(nombre, valorataque, valordefensa);
+        Item Elpoder = new Item(nombre, valorataque, valordefensa, false);
         
         Assert.AreEqual(nombre, Elpoder.Nombre);//Se corrobora que el nombre del objeto sea el correcto("El poder")
         Assert.AreEqual(valorataque, Elpoder.ValorAtaque);//Se corrobora que el valor de ataque del objeto sea el correcto(90)

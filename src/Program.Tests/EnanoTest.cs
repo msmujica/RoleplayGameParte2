@@ -118,7 +118,7 @@ public class EnanoTests
     public void TestAgregarYEliminarItem()
     {
         Enano ENano = new Enano("Fujin", "Masculino", 195);
-        Item espada = new Item("Espada", 10, 5);
+        Item espada = new Item("Espada", 10, 5, false);
         // Agrega un ítem al enano
         ENano.AddItem(espada);
         // Verifica que el daño se haya incrementado por el ítem

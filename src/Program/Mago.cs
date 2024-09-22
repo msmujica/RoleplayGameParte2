@@ -164,13 +164,13 @@ public class Mago : InterfacePersonaje
 
     public void AddItem(Item nombre)
     {
-        if (this.EstoyVivo == true)
+        if (this.EstoyVivo)
         {
             if(this.Item.Count < 2){
                 this.Item.Add(nombre);
                 this.Dmg += nombre.ValorAtaque;
                 this.Hp += nombre.ValorDefensa;
-                if (item.EsMagico)
+                if (nombre.EsMagico)
                 {
                     Console.WriteLine("El item agregado es magico");
                 }

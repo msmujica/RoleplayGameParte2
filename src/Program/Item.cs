@@ -35,7 +35,7 @@ public class Item
         set { esMagico = value; }
     }
 
-    public bool validacion(string nombre, int valorAtaque, int valorDefensa)
+    public bool validacion(string nombre, int valorAtaque, int valorDefensa, bool esMagico)
     {
         bool valido = false;
 	    
@@ -49,7 +49,7 @@ public class Item
 	
     public Item(string nombre, int valorataque, int valordefensa, bool esMagico)
     {
-        bool valor = validacion(nombre, valorataque, valordefensa);
+        bool valor = validacion(nombre, valorataque, valordefensa, esMagico);
         if (valor)
         {
             this.Nombre = nombre;

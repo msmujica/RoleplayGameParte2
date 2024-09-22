@@ -110,7 +110,7 @@ public class MagoTest
     {
         Libros grimorio = new Libros("5 trvols"); //Crea libro de hechizos 
         Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
-        Item espada = new Item("Espada", 10, 5);    //Crea un item con daño y defensa
+        Item espada = new Item("Espada", 10, 5, true);    //Crea un item con daño y defensa
         
         mago.AddItem(espada);   //Agrega item al mago
         Assert.AreEqual(105, mago.Hp);  //Verifica que el Hp del mago aumenta
@@ -122,7 +122,7 @@ public class MagoTest
     {
         Libros grimorio = new Libros("5 trvols");   //Crea libro de hechizos
         Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
-        Item espada = new Item("Espada", 10, 5);    //Crea un item con daño y defensa
+        Item espada = new Item("Espada", 10, 5, true);    //Crea un item con daño y defensa
         
         mago.AddItem(espada);   //Agrega item al mago
         mago.DeleteItem(espada);    //Elimina el item al mago

@@ -18,9 +18,9 @@ public class MagoTest
         
         Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea una instancia de mago con sus respectivos datos
         
-        mago.AtacarEnano(enano, FireBall);  //El mago ataca al enano con el hechizo "FireBall"
+        mago.Atacar(enano);  //El mago ataca al enano
 
-        Assert.AreEqual(70, enano.Hp);  //Verifica que el HP del Enano se haya reducido 70 despues del ataque 
+        Assert.AreEqual(90, enano.Hp);  //Verifica que el HP del Enano se haya reducido 90 despues del ataque 
     }
     
     [TestMethod]
@@ -36,7 +36,25 @@ public class MagoTest
         
         Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio); //Crea intancia mago con sus caracteristicas
         
-        mago.AtacarElfo(elfo, FireBall);    //El mago ataca al Elfo con el hechizo "Firebal"
+        mago.Atacar(elfo);    //El mago ataca al Elfo 
+
+        Assert.AreEqual(90, elfo.Hp);   //Verifica que el HP del Elfo se haya reducido 90 luego del ataque
+    }
+    
+    [TestMethod]
+    //Se testea el ataque hacia el Elfo
+    public void testAtacarConHechizoElfo()
+    {
+        Elfo elfo = new Elfo("Thorin", "Masculino", 195);   //Crea una instancia de elfo 
+
+        Hechizos FireBall = new Hechizos("FireBall", 20);   //Crea un hechizo con nombre y potencia
+        Libros grimorio = new Libros("5 trvols");   //Crea un libro de hechizos 
+        grimorio.AddHechizo(FireBall);  //Agrega el hechizo al libro
+        
+        
+        Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio); //Crea intancia mago con sus caracteristicas
+        
+        mago.AtacarWithHechizo(elfo, FireBall);    //El mago ataca al Elfo 
 
         Assert.AreEqual(70, elfo.Hp);   //Verifica que el HP del Elfo se haya reducido 70 luego del ataque
     }
@@ -94,7 +112,7 @@ public class MagoTest
         Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
         Item espada = new Item("Espada", 10, 5);    //Crea un item con daño y defensa
         
-        mago.Additem(espada);   //Agrega item al mago
+        mago.AddItem(espada);   //Agrega item al mago
         Assert.AreEqual(105, mago.Hp);  //Verifica que el Hp del mago aumenta
         Assert.AreEqual(20, mago.Dmg);  //Verifica que el daño del mago aumenta
     }
@@ -106,7 +124,7 @@ public class MagoTest
         Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
         Item espada = new Item("Espada", 10, 5);    //Crea un item con daño y defensa
         
-        mago.Additem(espada);   //Agrega item al mago
+        mago.AddItem(espada);   //Agrega item al mago
         mago.DeleteItem(espada);    //Elimina el item al mago
         Assert.AreEqual(100, mago.Hp); // Verifica que el HP del mago vuelve a 100 después de eliminar la espada
         Assert.AreEqual(10, mago.Dmg);  // Verifica que el daño del mago vuelve a 10 después de eliminar la espada

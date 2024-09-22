@@ -64,7 +64,7 @@ public class Elfo : InterfacePersonaje
     public int ValorAtaque()
     {   
         //Devuelve el daño que puede causar el elfo
-        return this.dmg;
+        return this.Dmg;
     }
 
     public int ValorArmor()

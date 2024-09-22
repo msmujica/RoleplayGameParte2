@@ -75,7 +75,7 @@ public class ElfoTests
         // Mata al elfo
         elfo.RestarVida(150);
         // Intenta atacar al mago
-        elfo.AtacarMago(mago);
+        elfo.Atacar(mago);
         // Verifica que el mago no reciba daño porque el elfo está muerto
         Assert.AreEqual(100, mago.Hp);
     }
@@ -87,7 +87,7 @@ public class ElfoTests
         Elfo elfo = new Elfo("Thorin", "Masculino", 195);
         Enano enano = new Enano("Thorin", "Masculino", 195);
         // El elfo ataca al enano
-        elfo.AtacarEnano(enano);
+        elfo.Atacar(enano);
         // Verifica que el enano pierda 50 puntos de vida
         Assert.AreEqual(50, enano.Hp);
     }
@@ -125,7 +125,7 @@ public class ElfoTests
         Elfo elfo2 = new Elfo("Fujin", "Masculino", 195);
         Item espada = new Item("Espada", 10, 5);
         // Agrega un ítem al elfo
-        elfo2.Additem(espada);
+        elfo2.AddItem(espada);
         // Verifica que el daño se haya incrementado por el ítem
         Assert.AreEqual(60, elfo2.Dmg);
         // Verifica que el HP se haya incrementado por el ítem

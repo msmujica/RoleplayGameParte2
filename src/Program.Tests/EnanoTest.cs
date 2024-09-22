@@ -70,7 +70,7 @@ public class EnanoTests
         // Mata al enano
         enano.RestarVida(150);
         // Intenta atacar al mago
-        enano.AtacarMago(mago);
+        enano.Atacar(mago);
         // Verifica que el mago no reciba daño porque el enano está muerto
         Assert.AreEqual(100, mago.Hp);
     }
@@ -82,7 +82,7 @@ public class EnanoTests
         Enano enano = new Enano("Thorin", "Masculino", 195);
         Elfo elfo = new Elfo("Legolas", "Masculino", 100);
         // El enano ataca al elfo
-        enano.AtacarElfo(elfo);
+        enano.Atacar(elfo);
         // Verifica que el elfo pierda 50 puntos de vida
         Assert.AreEqual(50, elfo.Hp);
     }

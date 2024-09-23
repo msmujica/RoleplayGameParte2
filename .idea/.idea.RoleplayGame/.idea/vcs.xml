@@ -2,5 +2,16 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Conway-s_Game_Of_Life" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Desafio1/Desafio1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Desafio_Menu_1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../EjerciciosP2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../LogicGateCsharp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../PII_Game_Of_Life" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../PII_P1_a_P2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../PII_PosterObjectsClassesMessages" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../RepartidoCirculo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../RolePlayGameCSharp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Sandbox-git" vcs="Git" />
   </component>
 </project>

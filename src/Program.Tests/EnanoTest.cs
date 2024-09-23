@@ -115,24 +115,62 @@ public class EnanoTests
 
     // Prueba la funcionalidad de agregar y eliminar ítems del inventario del enano.
     [TestMethod]
-    public void TestAgregarYEliminarItem()
+    public void TestAgregarYEliminarItemAtaqueElfo()
     {
-        Enano ENano = new Enano("Fujin", "Masculino", 195);
-        Item espada = new Item("Espada", 10, 5, false);
-        // Agrega un ítem al enano
-        ENano.AddItem(espada);
+        Enano enano = new Enano("Fujin", "Masculino", 195);
+        ItemAtacar espada = new ItemAtacar("Espada", 5, false);
+        // Agrega un ítem al elfo
+        enano.AddItem(espada);
         // Verifica que el daño se haya incrementado por el ítem
-        Assert.AreEqual(60, ENano.Dmg);
-        // Verifica que el HP se haya incrementado por el ítem
-        Assert.AreEqual(105, ENano.Hp);
-
-        // Elimina el ítem del enano
-        ENano.DeleteItem(espada);
+        Assert.AreEqual(55, enano.Dmg);
+        enano.DeleteItem(espada);
         // Verifica que el ítem haya sido eliminado
-        Assert.IsFalse(ENano.Item.Contains(espada));
+        Assert.IsFalse(enano.Item.Contains(espada));
         // Verifica que el daño vuelva a su valor original
-        Assert.AreEqual(50, ENano.Dmg);
+        Assert.AreEqual(50, enano.Dmg);
         // Verifica que el HP vuelva a su valor original
-        Assert.AreEqual(100, ENano.Hp);
+        Assert.AreEqual(100, enano.Hp);
+    }
+    
+    [TestMethod]
+    public void TestAgregarYEliminarItemDefensaElfo()
+    {
+        Enano enano = new Enano("Fujin", "Masculino", 195);
+        ItemDefensa escudo = new ItemDefensa("Espada", 10, false);
+        // Agrega un ítem al elfo
+        enano.AddItem(escudo);
+        // Verifica que el daño se haya incrementado por el ítem
+        Assert.AreEqual(50, enano.Dmg);
+        // Verifica que la vida se incremento por el item
+        Assert.AreEqual(110, enano.Hp);
+        //Se verifica que se halla elimiando el item
+        enano.DeleteItem(escudo);
+        // Verifica que el ítem haya sido eliminado
+        Assert.IsFalse(enano.Item.Contains(escudo));
+        // Verifica que el daño vuelva a su valor original
+        Assert.AreEqual(50, enano.Dmg);
+        // Verifica que el HP vuelva a su valor original
+        Assert.AreEqual(100, enano.Hp);
+    }
+    
+    [TestMethod]
+    public void TestAgregarYEliminarItemDefensaAtaqueElfo()
+    {
+        Enano enano = new Enano("Fujin", "Masculino", 195);
+        ItemAtacarDefensa escudo = new ItemAtacarDefensa("Espada", 10, 10, false);
+        // Agrega un ítem al elfo
+        enano.AddItem(escudo);
+        // Verifica que el daño se haya incrementado por el ítem
+        Assert.AreEqual(60, enano.Dmg);
+        // Verifica que la vida se incremento por el item
+        Assert.AreEqual(110, enano.Hp);
+        //Se verifica que se halla elimiando el item
+        enano.DeleteItem(escudo);
+        // Verifica que el ítem haya sido eliminado
+        Assert.IsFalse(enano.Item.Contains(escudo));
+        // Verifica que el daño vuelva a su valor original
+        Assert.AreEqual(50, enano.Dmg);
+        // Verifica que el HP vuelva a su valor original
+        Assert.AreEqual(100, enano.Hp);
     }
 }

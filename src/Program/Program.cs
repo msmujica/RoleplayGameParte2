@@ -1,12 +1,8 @@
 ﻿using Ucu.Poo.Roleplay;
 
-Elfo elfo = new Elfo("Thorin", "Masculino", 195);
-Enano enano = new Enano("Thorin", "Masculino", 195);
-
-
-Hechizos FireBall = new Hechizos("FireBall", 20);   // Crea hechizo con nombre y daño
-Libros grimorio = new Libros("5 trvols");   //Se crea un libro de hechizos 
-grimorio.AddHechizo(FireBall);  //Se agrega el hechizo al libro
-Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    
-mago.AtacarWithHechizo(enano, FireBall);
-Console.WriteLine(enano.Hp);
+Elfo elfo2 = new Elfo("Fujin", "Masculino", 195);
+ItemAtacar espada = new ItemAtacar("Espada", 5, false);
+// Agrega un ítem al elfo
+elfo2.AddItem(espada);
+Console.WriteLine(elfo2.Dmg);
+elfo2.DeleteItem(espada);

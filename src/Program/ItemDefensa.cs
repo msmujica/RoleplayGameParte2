@@ -1,10 +1,8 @@
-/*using System;
-using System.Numerics;
+namespace Ucu.Poo.Roleplay;
 
-/*namespace Ucu.Poo.Roleplay;
+public class ItemDefensa : InterfaceDefensa, InterfaceItem
 
-public class Item
-{
+{   
     private string nombre;
 
     public string Nombre
@@ -34,28 +32,12 @@ public class Item
         get { return esMagico; }
         set { esMagico = value; }
     }
-
-    public bool validacion(string nombre, int valorAtaque, int valorDefensa, bool esMagico)
-    {
-        bool valido = false;
-	    
-        if (valorAtaque > 0 && valorDefensa > 0 && nombre != null)
-        {
-            valido = true;
-        }
-
-        return valido;
-    }
+    
 	
-    public Item(string nombre, int valorataque, int valordefensa, bool esMagico)
+    public ItemDefensa(string nombre, int valordefensa, bool esMagico)
     {
-        bool valor = validacion(nombre, valorataque, valordefensa, esMagico);
-        if (valor)
-        {
             this.Nombre = nombre;
-            this.ValorAtaque = valorataque;
             this.ValorDefensa = valordefensa;
             this.EsMagico = esMagico;
-        }
     }
-}*/
+}

@@ -129,7 +129,7 @@ public class Elfo : InterfacePersonaje
         
     }
 
-    public void AddItem(Item nombre)
+    public void AddItem(InterfaceItem nombre)
     {
         if (this.EstoyVivo)
         {
@@ -138,8 +138,14 @@ public class Elfo : InterfacePersonaje
                 if (item.Count < 2)
                 {
                     this.Item.Add(nombre);
-                    this.Dmg += nombre.ValorAtaque;
-                    this.Hp += nombre.ValorDefensa;
+                    if (nombre is InterfaceAtaque itemAtaque)
+                    {
+                        this.Dmg += itemAtaque.ValorAtaque;
+                    }
+                    if (nombre is InterfaceDefensa itemDefensa)
+                    {
+                        this.Hp += itemDefensa.ValorDefensa;
+                    }
                 }
                 else
                 {
@@ -159,15 +165,21 @@ public class Elfo : InterfacePersonaje
     
             
        
-    public void DeleteItem(Item nombre)
+    public void DeleteItem(InterfaceItem nombre)
     {
         if (this.EstoyVivo == true){
             
             if (this.Item.Contains(nombre))
             {
                 this.Item.Remove(nombre);
-                this.Dmg -= nombre.ValorAtaque;
-                this.Hp -= nombre.ValorDefensa;
+                if (nombre is InterfaceAtaque itemAtaque)
+                {
+                    this.Dmg -= itemAtaque.ValorAtaque;
+                }
+                if (nombre is InterfaceDefensa itemDefensa)
+                {
+                    this.Hp -= itemDefensa.ValorDefensa;
+                }
             }
             else
             { 

@@ -106,23 +106,73 @@ public class MagoTest
     }
 
     [TestMethod]
-    public void testAddItem()
+    public void testAddItemAtaque()
     {
         Libros grimorio = new Libros("5 trvols"); //Crea libro de hechizos 
         Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
-        Item espada = new Item("Espada", 10, 5, true);    //Crea un item con daño y defensa
+        ItemAtacar espada = new ItemAtacar("Espada", 10,  true);    //Crea un item con daño y defensa
         
         mago.AddItem(espada);   //Agrega item al mago
-        Assert.AreEqual(105, mago.Hp);  //Verifica que el Hp del mago aumenta
+        Assert.AreEqual(100, mago.Hp);  //Verifica que el Hp del mago aumenta
+        Assert.AreEqual(20, mago.Dmg);  //Verifica que el daño del mago aumenta
+    }
+    
+    [TestMethod]
+    public void testAddItemDefensa()
+    {
+        Libros grimorio = new Libros("5 trvols"); //Crea libro de hechizos 
+        Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
+        ItemDefensa espada = new ItemDefensa("Espada", 10,  true);    //Crea un item con daño y defensa
+        
+        mago.AddItem(espada);   //Agrega item al mago
+        Assert.AreEqual(110, mago.Hp);  //Verifica que el Hp del mago aumenta
+        Assert.AreEqual(10, mago.Dmg);  //Verifica que el daño del mago aumenta
+    }
+    
+    [TestMethod]
+    public void testAddItemAtaqueDefensa()
+    {
+        Libros grimorio = new Libros("5 trvols"); //Crea libro de hechizos 
+        Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
+        ItemAtacarDefensa espada = new ItemAtacarDefensa("Espada", 10, 10, true);    //Crea un item con daño y defensa
+        
+        mago.AddItem(espada);   //Agrega item al mago
+        Assert.AreEqual(110, mago.Hp);  //Verifica que el Hp del mago aumenta
         Assert.AreEqual(20, mago.Dmg);  //Verifica que el daño del mago aumenta
     }
 
     [TestMethod]
-    public void testDeleteItem()
+    public void testDeleteItemAtacar()
     {
         Libros grimorio = new Libros("5 trvols");   //Crea libro de hechizos
         Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
-        Item espada = new Item("Espada", 10, 5, true);    //Crea un item con daño y defensa
+        ItemAtacar espada = new ItemAtacar("Espada", 10, true);    //Crea un item con daño y defensa
+        
+        mago.AddItem(espada);   //Agrega item al mago
+        mago.DeleteItem(espada);    //Elimina el item al mago
+        Assert.AreEqual(100, mago.Hp); // Verifica que el HP del mago vuelve a 100 después de eliminar la espada
+        Assert.AreEqual(10, mago.Dmg);  // Verifica que el daño del mago vuelve a 10 después de eliminar la espada
+    }
+    
+    [TestMethod]
+    public void testDeleteItemDefensa()
+    {
+        Libros grimorio = new Libros("5 trvols");   //Crea libro de hechizos
+        Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
+        ItemDefensa espada = new ItemDefensa("Espada", 10, true);    //Crea un item con daño y defensa
+        
+        mago.AddItem(espada);   //Agrega item al mago
+        mago.DeleteItem(espada);    //Elimina el item al mago
+        Assert.AreEqual(100, mago.Hp); // Verifica que el HP del mago vuelve a 100 después de eliminar la espada
+        Assert.AreEqual(10, mago.Dmg);  // Verifica que el daño del mago vuelve a 10 después de eliminar la espada
+    }
+    
+    [TestMethod]
+    public void testDeleteItemAtacarDefensa()
+    {
+        Libros grimorio = new Libros("5 trvols");   //Crea libro de hechizos
+        Mago mago = new Mago("Gandalf", "Masculino", 100, grimorio);    //Crea intancia mago con sus caracteristicas
+        ItemAtacarDefensa espada = new ItemAtacarDefensa("Espada", 10,10, true);    //Crea un item con daño y defensa
         
         mago.AddItem(espada);   //Agrega item al mago
         mago.DeleteItem(espada);    //Elimina el item al mago

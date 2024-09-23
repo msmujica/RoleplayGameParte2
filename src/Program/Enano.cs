@@ -123,7 +123,7 @@ public class  Enano : InterfacePersonaje
             Console.WriteLine("No puedes hacer ninguna accion tu personaje esta muerto");
         }    
     }
-    public void AddItem(Item nombre)
+ public void AddItem(InterfaceItem nombre)
     {
         if (this.EstoyVivo)
         {
@@ -132,46 +132,58 @@ public class  Enano : InterfacePersonaje
                 if (item.Count < 2)
                 {
                     this.Item.Add(nombre);
-                    this.Dmg += nombre.ValorAtaque;
-                    this.Hp += nombre.ValorDefensa;
+                    if (nombre is InterfaceAtaque itemAtaque)
+                    {
+                        this.Dmg += itemAtaque.ValorAtaque;
+                    }
+                    if (nombre is InterfaceDefensa itemDefensa)
+                    {
+                        this.Hp += itemDefensa.ValorDefensa;
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("No puedes agregar mas items, elimina alguno para agregar otro.");
+                    Console.WriteLine("No puedes agregar mas items, elimina alguno para agregar otro."); 
                 }
             }
-            else
+            else 
+            
             {
                 Console.WriteLine("No se puede agregar un objeto magico a este personaje");
             } 
         }
-            
-            
         else
         {
-            Console.WriteLine("No puedes hacer ninguna accion tu personaje esta muerto");
-        }
+            Console.WriteLine("Estas Muerto."); }
     }
- 
-
-    public void DeleteItem(Item nombre)
+    
+            
+       
+    public void DeleteItem(InterfaceItem nombre)
     {
         if (this.EstoyVivo == true){
+            
             if (this.Item.Contains(nombre))
             {
                 this.Item.Remove(nombre);
-                this.Dmg -= nombre.ValorAtaque;
-                this.Hp -= nombre.ValorDefensa;
+                if (nombre is InterfaceAtaque itemAtaque)
+                {
+                    this.Dmg -= itemAtaque.ValorAtaque;
+                }
+                if (nombre is InterfaceDefensa itemDefensa)
+                {
+                    this.Hp -= itemDefensa.ValorDefensa;
+                }
             }
             else
-            {
+            { 
                 Console.WriteLine("No puedes eliminar un item que no existe");
             }
         }
         else
         {
-            Console.WriteLine("No puedes hacer ninguna accion tu personaje esta muerto");
+            Console.WriteLine("Estas Muerto.");
+
         }
     }
-
-    }
+}

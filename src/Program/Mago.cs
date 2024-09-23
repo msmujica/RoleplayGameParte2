@@ -162,35 +162,57 @@ public class Mago : InterfacePersonaje
         }
     }
 
-    public void AddItem(Item nombre)
+public void AddItem(InterfaceItem nombre)
     {
         if (this.EstoyVivo)
         {
-            if(this.Item.Count < 2){
-                this.Item.Add(nombre);
-                this.Dmg += nombre.ValorAtaque;
-                this.Hp += nombre.ValorDefensa;
-                if (nombre.EsMagico)
+            if (nombre.EsMagico)
+            {
+                if (item.Count < 2)
                 {
-                    Console.WriteLine("El item agregado es magico");
+                    this.Item.Add(nombre);
+                    if (nombre is InterfaceAtaque itemAtaque)
+                    {
+                        this.Dmg += itemAtaque.ValorAtaque;
+                    }
+                    if (nombre is InterfaceDefensa itemDefensa)
+                    {
+                        this.Hp += itemDefensa.ValorDefensa;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No puedes agregar mas items, elimina alguno para agregar otro."); 
                 }
             }
+            else 
+            
+            {
+                Console.WriteLine("No se puede agregar un objeto magico a este personaje");
+            } 
         }
         else
         {
-            Console.WriteLine("Estas Muerto.");
-        }
+            Console.WriteLine("Estas Muerto."); }
     }
-
-    public void DeleteItem(Item nombre)
+    
+            
+       
+    public void DeleteItem(InterfaceItem nombre)
     {
         if (this.EstoyVivo == true){
             
             if (this.Item.Contains(nombre))
             {
                 this.Item.Remove(nombre);
-                this.Dmg -= nombre.ValorAtaque;
-                this.Hp -= nombre.ValorDefensa;
+                if (nombre is InterfaceAtaque itemAtaque)
+                {
+                    this.Dmg -= itemAtaque.ValorAtaque;
+                }
+                if (nombre is InterfaceDefensa itemDefensa)
+                {
+                    this.Hp -= itemDefensa.ValorDefensa;
+                }
             }
             else
             { 

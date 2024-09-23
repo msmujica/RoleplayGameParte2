@@ -117,24 +117,61 @@ public class ElfoTests
         // Verifica que el HP no cambie porque está muerto
         Assert.AreEqual(-50, elfo.Hp);
     }
-
     // Prueba la funcionalidad de agregar y eliminar ítems del inventario del elfo.
     [TestMethod]
-    public void TestAgregarYEliminarItemElfo()
+    public void TestAgregarYEliminarItemAtaqueElfo()
     {
         Elfo elfo2 = new Elfo("Fujin", "Masculino", 195);
-        Item espada = new Item("Espada", 10, 5, false);
+        ItemAtacar espada = new ItemAtacar("Espada", 5, false);
         // Agrega un ítem al elfo
         elfo2.AddItem(espada);
         // Verifica que el daño se haya incrementado por el ítem
-        Assert.AreEqual(60, elfo2.Dmg);
-        // Verifica que el HP se haya incrementado por el ítem
-        Assert.AreEqual(105, elfo2.Hp);
-
-        // Elimina el ítem del elfo
+        Assert.AreEqual(55, elfo2.Dmg);
         elfo2.DeleteItem(espada);
         // Verifica que el ítem haya sido eliminado
         Assert.IsFalse(elfo2.Item.Contains(espada));
+        // Verifica que el daño vuelva a su valor original
+        Assert.AreEqual(50, elfo2.Dmg);
+        // Verifica que el HP vuelva a su valor original
+        Assert.AreEqual(100, elfo2.Hp);
+    }
+    
+    [TestMethod]
+    public void TestAgregarYEliminarItemDefensaElfo()
+    {
+        Elfo elfo2 = new Elfo("Fujin", "Masculino", 195);
+        ItemDefensa escudo = new ItemDefensa("Espada", 10, false);
+        // Agrega un ítem al elfo
+        elfo2.AddItem(escudo);
+        // Verifica que el daño se haya incrementado por el ítem
+        Assert.AreEqual(50, elfo2.Dmg);
+        // Verifica que la vida se incremento por el item
+        Assert.AreEqual(110, elfo2.Hp);
+        //Se verifica que se halla elimiando el item
+        elfo2.DeleteItem(escudo);
+        // Verifica que el ítem haya sido eliminado
+        Assert.IsFalse(elfo2.Item.Contains(escudo));
+        // Verifica que el daño vuelva a su valor original
+        Assert.AreEqual(50, elfo2.Dmg);
+        // Verifica que el HP vuelva a su valor original
+        Assert.AreEqual(100, elfo2.Hp);
+    }
+    
+    [TestMethod]
+    public void TestAgregarYEliminarItemDefensaAtaqueElfo()
+    {
+        Elfo elfo2 = new Elfo("Fujin", "Masculino", 195);
+        ItemAtacarDefensa escudo = new ItemAtacarDefensa("Espada", 10, 10, false);
+        // Agrega un ítem al elfo
+        elfo2.AddItem(escudo);
+        // Verifica que el daño se haya incrementado por el ítem
+        Assert.AreEqual(60, elfo2.Dmg);
+        // Verifica que la vida se incremento por el item
+        Assert.AreEqual(110, elfo2.Hp);
+        //Se verifica que se halla elimiando el item
+        elfo2.DeleteItem(escudo);
+        // Verifica que el ítem haya sido eliminado
+        Assert.IsFalse(elfo2.Item.Contains(escudo));
         // Verifica que el daño vuelva a su valor original
         Assert.AreEqual(50, elfo2.Dmg);
         // Verifica que el HP vuelva a su valor original
